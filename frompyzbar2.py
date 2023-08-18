@@ -6,7 +6,7 @@ import numpy as np
 import csv
 import datetime
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 font = cv2.FONT_HERSHEY_SIMPLEX
 # QRCodeDetectorを生成
 #detector = cv2.QRCodeDetector()
