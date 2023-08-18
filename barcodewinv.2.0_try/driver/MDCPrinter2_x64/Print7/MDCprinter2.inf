@@ -1,0 +1,75 @@
+;
+;	Printer Installation File "MDCprinter2.inf"
+;
+;	List of supported printers, manufacturers
+;
+; 	Copyright 2011 MediaDrive Corporation
+;
+[Version]
+Signature="$Windows NT$"
+Provider=%MediaDrive%
+LayoutFile=ntprint.inf
+ClassGUID={4D36E979-E325-11CE-BFC1-08002BE10318}
+Class=Printer
+DriverVer=01/28/2011,2.3.0.4
+CatalogFile=MDCprinter2.cat
+
+;
+; Manufacturer section.
+;
+[Manufacturer]
+%MediaDrive% = MediaDrive,NTamd64
+;"MediaDrive"
+
+; Model section. 
+; 
+[MediaDrive.NTamd64]
+"MDC Printer2" = MDCprinter2
+
+;
+; Installer Sections
+;
+[MDCprinter2]
+CopyFiles=@MDCprinter2.gpd
+CopyFiles=@MDCprinter2.dll
+CopyFiles=@MDCprinter2.ini
+CopyFiles=@MDCprinter2UI.dll
+DataSection=UNIDRV_DATA
+DataFile=MDCprinter2.gpd
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+;
+;  Location of source files not in Layout.inf.
+;
+[SourceDisksNames.amd64]
+1 = %disk1%,,,\amd64
+
+[SourceDisksFiles]
+MDCprinter2.dll	 = 1
+MDCprinter2.ini	 = 1
+MDCprinter2.GPD	 = 1
+MDCprinter2UI.dll = 1
+
+;
+; Call SetupSetDirectoryId with 66000 to set the target directory at runtime
+; (depending on which environment drivers are getting installed)
+;
+[DestinationDirs]
+DefaultDestDir=66000
+
+;
+; Control Flags
+;
+[ControlFlags]
+ExcludeFromSelect = 2369
+
+;
+; Localizable Strings
+;
+[Strings]
+PrinterClassName="Printers"
+MediaDrive="Media Drive Corp."
+disk1="Media Drive Corp. Printer Driver Setup Disk"
+
+

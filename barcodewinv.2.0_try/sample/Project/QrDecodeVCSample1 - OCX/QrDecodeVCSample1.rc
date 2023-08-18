@@ -1,0 +1,261 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 17, 1\r\n"
+    "#pragma code_page(932)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\QrDecodeVCSample1.rc2""  // Microsoft Visual C++ 以外のツールで編集されたリソース\r\n"
+    "#include ""l.jpn\\afxres.rc""          // 標準のコンポーネント\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\QrDecodeVCSample1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "QrDecodeVCSample1のﾊﾞｰｼﾞｮﾝ情報"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "QrDecodeVCSample1 Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2009",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_QRDECODEVCSAMPLE1_DIALOG DIALOGEX 0, 0, 319, 345
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES | WS_EX_APPWINDOW
+CAPTION "QrDecodeVCSample1"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_RESULT,114,123,198,215,ES_MULTILINE | ES_WANTRETURN | WS_VSCROLL
+    EDITTEXT        IDC_EDIT_FILENAME,7,23,264,16,ES_AUTOHSCROLL
+    PUSHBUTTON      "開く",IDC_BUTTON_FILEOPEN,275,23,37,15
+    LTEXT           "読み込む画像ファイル",IDC_STATIC,7,7,79,8
+    PUSHBUTTON      "全域認識",IDC_BUTTON_DECODE,261,43,51,31
+    LISTBOX         IDC_LIST_QR,7,100,105,238,LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "QRｺｰﾄﾞ上限検出数",IDC_STATIC,7,48,61,8
+    EDITTEXT        IDC_EDIT_LIMITCODES,72,45,28,14
+    LTEXT           "検出ﾚﾍﾞﾙ",IDC_STATIC,110,48,29,8
+    COMBOBOX        IDC_COMBO_FINDER,143,45,64,167,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "検出したQRコード",IDC_STATIC,7,85,52,8
+    LTEXT           "型番",IDC_STATIC,115,85,15,8
+    LTEXT           "訂正レベル",IDC_STATIC,174,85,34,8
+    LTEXT           "マスクID",IDC_STATIC,250,85,26,8
+    EDITTEXT        IDC_EDIT_VERSION,134,82,26,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CORRECT,211,82,26,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MASKID,278,82,26,14,ES_AUTOHSCROLL
+    LTEXT           "連接情報 [番号/合計数 （ﾊﾟﾘﾃｨ）]",IDC_STATIC,115,107,99,8
+    EDITTEXT        IDC_EDIT_STAPP,217,104,70,14,ES_AUTOHSCROLL
+    LTEXT           "頁",IDC_STATIC,215,48,8,8
+    EDITTEXT        IDC_EDIT_PAGE,227,45,28,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_PAGE,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,248,46,10,12
+    CONTROL         "",IDC_MDQRDECODECTRL1,
+                    "{641F3F12-7565-44D8-8514-9ABE58693F04}",WS_TABSTOP,65,64,27,25
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,1,0
+ PRODUCTVERSION 2,0,1,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041104b0"
+        BEGIN
+            VALUE "Comments", "http://mediadrive.jp"
+            VALUE "CompanyName", "メディアドライブ株式会社"
+            VALUE "FileDescription", "QrDecodeVCSample1"
+            VALUE "FileVersion", "2, 0, 1, 0"
+            VALUE "InternalName", "QrDecodeVCSample1"
+            VALUE "LegalCopyright", "Copyright (C) 2015 MediaDrive Corp."
+            VALUE "LegalTrademarks", "MediaDrive Corporation"
+            VALUE "OriginalFilename", "QrDecodeVCSample1.EXE"
+            VALUE "ProductName", "QRコード認識ライブラリ"
+            VALUE "ProductVersion", "2, 0, 1, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x411, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_QRDECODEVCSAMPLE1_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 338
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_QRDECODEVCSAMPLE1_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_FINDER, 0x403, 13, 0
+0xf08f, 0x8f8c, 0xc98a, 0x6198, 0x4581, 0xad8b, "\000" 
+    IDC_COMBO_FINDER, 0x403, 13, 0
+0xf08f, 0x8f8c, 0xc98a, 0x6198, 0x4581, 0x8692, "\000" 
+    IDC_COMBO_FINDER, 0x403, 13, 0
+0xf08f, 0x8f8c, 0xc98a, 0x6198, 0x4581, 0xe38e, "\000" 
+    IDC_COMBO_FINDER, 0x403, 5, 0
+0x5795, 0x808f, "\000" 
+    IDC_COMBO_FINDER, 0x403, 13, 0
+0x678a, 0xe591, 0x9f8c, 0x6f8f, 0x4581, 0xe38e, "\000" 
+    IDC_COMBO_FINDER, 0x403, 13, 0
+0x678a, 0xe591, 0x9f8c, 0x6f8f, 0x4581, 0x8692, "\000" 
+    IDC_COMBO_FINDER, 0x403, 13, 0
+0x678a, 0xe591, 0x9f8c, 0x6f8f, 0x4581, 0xad8b, "\000" 
+    IDC_MDQRDECODECTRL1, 0x376, 58, 0
+0x0013, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0032, 0x0030, 
+0x0030, 0x0039, 0x0020, 0x0000, 0x0001, 0x04dc, 0x0000, 0x03ed, 0x0000, 
+0x0000, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+1                       RT_MANIFEST             "res\\default1.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "QrDecodeVCSample1 のﾊﾞｰｼﾞｮﾝ情報(&A)..."
+END
+
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE 17, 1
+#pragma code_page(932)
+#endif //_WIN32
+#include "res\QrDecodeVCSample1.rc2"  // Microsoft Visual C++ 以外のツールで編集されたリソース
+#include "l.jpn\afxres.rc"          // 標準のコンポーネント
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

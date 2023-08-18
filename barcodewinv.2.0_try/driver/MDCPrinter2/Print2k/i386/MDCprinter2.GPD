@@ -1,0 +1,490 @@
+*GPDSpecVersion: "1.0"
+*Include: "StdNames.gpd"
+*GPDFileVersion: "1.0"
+*GPDFileName: "MDCprinter2.GPD"
+*ModelName: "MDC Printer2"
+*MasterUnits: PAIR(1200, 1200)
+*ResourceDLL: "MDCprinter2UI.Dll"
+*PrinterType: SERIAL
+*Feature: Orientation
+{
+    *rcNameID: =ORIENTATION_DISPLAY
+    *DefaultOption: PORTRAIT
+    *Option: PORTRAIT
+    {
+        *rcNameID: =PORTRAIT_DISPLAY
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.3
+            *Cmd: ""
+        }
+    }
+    *Option: LANDSCAPE_CC270
+    {
+        *rcNameID: =LANDSCAPE_DISPLAY
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.3
+            *Cmd: ""
+        }
+    }
+}
+*Feature: InputBin
+{
+    *rcNameID: =PAPER_SOURCE_DISPLAY
+    *DefaultOption: AUTO
+    *Option: AUTO
+    {
+        *rcNameID: =AUTO_DISPLAY
+    }
+    *Option: MANUAL
+    {
+        *rcNameID: =MANUAL_FEED_DISPLAY
+*% Warning: this input bin has PSRC_MAN_PROMPT set in GPC, which is ignored by GPD.
+    }
+}
+*Feature: Resolution
+{
+    *rcNameID: =RESOLUTION_DISPLAY
+    *DefaultOption: Option5
+    *Option: Option1
+    {
+        *Name: "400 x 400 " =DOTS_PER_INCH
+        *DPI: PAIR(400, 400)
+        *TextDPI: PAIR(400, 400)
+        *MinStripBlankPixels: 32700
+        *SpotDiameter: 100
+        *Command: CmdSendBlockData { *Cmd : "" }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.13
+            *Cmd: ""
+        }
+    }
+    *Option: Option2
+    {
+        *Name: "300 x 300 " =DOTS_PER_INCH
+        *DPI: PAIR(300, 300)
+        *TextDPI: PAIR(300, 300)
+        *MinStripBlankPixels: 32700
+        *SpotDiameter: 100
+        *Command: CmdSendBlockData { *Cmd : "" }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.13
+            *Cmd: ""
+        }
+    }
+    *Option: Option3
+    {
+        *Name: "200 x 200 " =DOTS_PER_INCH
+        *DPI: PAIR(200, 200)
+        *TextDPI: PAIR(200, 200)
+        *MinStripBlankPixels: 32700
+        *SpotDiameter: 100
+        *Command: CmdSendBlockData { *Cmd : "" }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.13
+            *Cmd: ""
+        }
+    }
+    *Option: Option4
+    {
+        *Name: "150 x 150 " =DOTS_PER_INCH
+        *DPI: PAIR(150, 150)
+        *TextDPI: PAIR(150, 150)
+        *MinStripBlankPixels: 32700
+        *SpotDiameter: 100
+        *Command: CmdSendBlockData { *Cmd : "" }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.13
+            *Cmd: ""
+        }
+    }
+    *Option: Option5
+    {
+        *Name: "100 x 100 " =DOTS_PER_INCH
+        *DPI: PAIR(100, 100)
+        *TextDPI: PAIR(100, 100)
+        *MinStripBlankPixels: 32700
+        *SpotDiameter: 100
+        *Command: CmdSendBlockData { *Cmd : "" }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.13
+            *Cmd: ""
+        }
+    }
+}
+*Feature: PaperSize
+{
+    *rcNameID: =PAPER_SIZE_DISPLAY
+    *DefaultOption: A4
+    *Option: A3
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(14028, 19848)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable width is adjusted (14028->14024) so it is divisible by the resolution X scale.
+                *PrintableArea: PAIR(14024, 19848)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: A4
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(9924, 14028)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable width is adjusted (9924->9920) so it is divisible by the resolution X scale.
+*% Warning: the following printable length is adjusted (14028->14024) so it is divisible by the resolution Y scale.
+                *PrintableArea: PAIR(9920, 14024)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: A5
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(6996, 9924)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable width is adjusted (6996->6992) so it is divisible by the resolution X scale.
+*% Warning: the following printable length is adjusted (9924->9920) so it is divisible by the resolution Y scale.
+                *PrintableArea: PAIR(6992, 9920)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: B4
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(12144, 17196)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable length is adjusted (17196->17192) so it is divisible by the resolution Y scale.
+                *PrintableArea: PAIR(12144, 17192)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: B5
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(8604, 12144)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable width is adjusted (8604->8600) so it is divisible by the resolution X scale.
+                *PrintableArea: PAIR(8600, 12144)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: JAPANESE_POSTCARD
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(4728, 6996)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable length is adjusted (6996->6992) so it is divisible by the resolution Y scale.
+                *PrintableArea: PAIR(4728, 6992)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: DBL_JAPANESE_POSTCARD
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(9444, 6996)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable width is adjusted (9444->9440) so it is divisible by the resolution X scale.
+*% Warning: the following printable length is adjusted (6996->6992) so it is divisible by the resolution Y scale.
+                *PrintableArea: PAIR(9440, 6992)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: A6
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(4956, 6996)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable width is adjusted (4956->4952) so it is divisible by the resolution X scale.
+*% Warning: the following printable length is adjusted (6996->6992) so it is divisible by the resolution Y scale.
+                *PrintableArea: PAIR(4952, 6992)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: JENV_KAKU2
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(11340, 15684)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable width is adjusted (11340->11336) so it is divisible by the resolution X scale.
+*% Warning: the following printable length is adjusted (15684->15680) so it is divisible by the resolution Y scale.
+                *PrintableArea: PAIR(11336, 15680)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: JENV_KAKU3
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(10200, 13080)
+        *PrintableOrigin: PAIR(0, 0)
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: JENV_CHOU3
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(5664, 11100)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable length is adjusted (11100->11096) so it is divisible by the resolution Y scale.
+                *PrintableArea: PAIR(5664, 11096)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: JENV_CHOU4
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(4248, 9684)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable length is adjusted (9684->9680) so it is divisible by the resolution Y scale.
+                *PrintableArea: PAIR(4248, 9680)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: B6_JIS
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(6036, 8592)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable width is adjusted (6036->6032) so it is divisible by the resolution X scale.
+                *PrintableArea: PAIR(6032, 8592)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+    *Option: JENV_YOU4
+    {
+        *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+        *PrintableArea: PAIR(4956, 11100)
+        *PrintableOrigin: PAIR(0, 0)
+        *switch: Resolution
+        {
+            *case: Option4
+            {
+*% Warning: the following printable width is adjusted (4956->4952) so it is divisible by the resolution X scale.
+*% Warning: the following printable length is adjusted (11100->11096) so it is divisible by the resolution Y scale.
+                *PrintableArea: PAIR(4952, 11096)
+            }
+        }
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.9
+            *Cmd: ""
+        }
+    }
+}
+*Feature: ColorMode
+{
+    *rcNameID: =COLOR_PRINTING_MODE_DISPLAY
+    *DefaultOption: 24bpp
+    *Option: Mono
+    {
+        *rcNameID: =MONO_DISPLAY
+        *DevNumOfPlanes: 1
+        *DevBPP: 1
+        *Color? : FALSE
+    }
+    *Option: 24bpp
+    {
+        *rcNameID: =24BPP_DISPLAY
+        *DevNumOfPlanes: 1
+        *DevBPP: 24
+        *DrvBPP: 24
+        *RasterMode: DIRECT
+        *PaletteSize: 256
+        *PaletteProgrammable? : TRUE
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.11
+            *Cmd: ""
+        }
+    }
+}
+*Feature: Halftone
+{
+    *rcNameID: =HALFTONING_DISPLAY
+    *DefaultOption: HT_PATSIZE_AUTO
+    *Option: HT_PATSIZE_AUTO
+    {
+        *rcNameID: =HT_AUTO_SELECT_DISPLAY
+    }
+    *Option: HT_PATSIZE_SUPERCELL_M
+    {
+        *rcNameID: =HT_SUPERCELL_DISPLAY
+    }
+    *Option: HT_PATSIZE_6x6_M
+    {
+        *rcNameID: =HT_DITHER6X6_DISPLAY
+    }
+    *Option: HT_PATSIZE_8x8_M
+    {
+        *rcNameID: =HT_DITHER8X8_DISPLAY
+    }
+}
+*Command: CmdStartDoc
+{
+    *Order: DOC_SETUP.1
+    *Cmd: ""
+}
+*Command: CmdStartPage
+{
+    *Order: PAGE_SETUP.1
+    *Cmd: ""
+}
+*Command: CmdEndJob
+{
+    *Order: JOB_FINISH.1
+    *Cmd: ""
+}
+*Command: CmdEndPage
+{
+    *Order: PAGE_FINISH.1
+    *Cmd: ""
+}
+*RotateCoordinate?: FALSE
+*RotateRaster?: TRUE
+*RotateFont?: FALSE
+*TextCaps: LIST(TC_RA_ABLE)
+*CursorXAfterCR: AT_CURSOR_X_ORIGIN
+*BadCursorMoveInGrxMode: LIST(X_PORTRAIT,X_LANDSCAPE,Y_PORTRAIT,Y_LANDSCAPE)
+*MaxLineSpacing: 19525
+*XMoveThreshold: 0
+*YMoveThreshold: *
+*XMoveUnit: 1200
+*YMoveUnit: 1200
+*Command: CmdXMoveAbsolute { *Cmd : "" }
+*Command: CmdXMoveRelRight { *Cmd : "" }
+*Command: CmdXMoveRelLeft { *Cmd : "" }
+*Command: CmdYMoveAbsolute { *Cmd : "" }
+*%Command: CmdYMoveAbsolute { *Cmd : "" }
+*Command: CmdYMoveRelDown { *Cmd : "" }
+*Command: CmdYMoveRelUp { *Cmd : "" }
+*Command: CmdSetLineSpacing { *Cmd : "" }
+*Command: CmdCR { *Cmd : "" }
+*Command: CmdLF { *Cmd : "" }
+*Command: CmdFF { *Cmd : "" }
+*Command: CmdBackSpace { *Cmd : "" }
+*Command: CmdUniDirectionOn { *Cmd : "" }
+*Command: CmdUniDirectionOff { *Cmd : "" }
+*Command: CmdPushCursor { *Cmd : "" }
+*Command: CmdPopCursor { *Cmd : "" }
+*EjectPageWithFF?: FALSE
+*OutputDataFormat: H_BYTE
+*OptimizeLeftBound?: FALSE
+*CursorXAfterSendBlockData: AT_GRXDATA_ORIGIN
+*CursorYAfterSendBlockData: AUTO_INCREMENT
+*DefaultCTT: 0
