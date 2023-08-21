@@ -6,7 +6,7 @@ import numpy as np
 import csv
 import datetime
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 font = cv2.FONT_HERSHEY_SIMPLEX
 # QRCodeDetectorを生成
 #detector = cv2.QRCodeDetector()
@@ -15,7 +15,7 @@ lst = []
 
 initial_time = datetime.datetime.now()
 time_cnt = 30        # sec 初期値
-time_interval = 60  # sec 定期実行の時間間隔
+time_interval = 30  # sec 定期実行の時間間隔
 
 while cap.isOpened():
     #現在時間 sec
