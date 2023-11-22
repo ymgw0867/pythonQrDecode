@@ -5,8 +5,11 @@ import cv2
 import numpy as np
 import csv
 import datetime
+import pyperclip
+import pyautogui
 
-cap = cv2.VideoCapture(1)
+#cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 font = cv2.FONT_HERSHEY_SIMPLEX
 # QRCodeDetectorを生成
 #detector = cv2.QRCodeDetector()
@@ -41,6 +44,11 @@ while cap.isOpened():
                 print(sstr)
                 wstr = sstr
                 lst.append([sstr, ""])
+
+                # クリップボードにコピー 2023/11/22
+                pyperclip.copy(sstr + '\n')
+                # クリップボードからペースト 2023/11/22
+                pyautogui.hotkey('ctrl', 'v')
 
                 # メッセージボックス（はい・いいえ） 
                 ret = messagebox.askyesno('認識しました', wstr + '\n\n' + 'ウィンドウを閉じますか？')

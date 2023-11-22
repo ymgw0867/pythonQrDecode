@@ -5,6 +5,7 @@ from pathlib import Path
 from pylibdmtx import pylibdmtx
 from pyzbar import pyzbar
 
+
 block_cipher = None
 
 
